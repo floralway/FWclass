@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>個人穿搭風格養成班｜質穎形象顏究室®</title>
+<meta name="description" content="2026年第一期・全實體小班課・共6堂・台中WensCo文心館">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400&family=Noto+Sans+TC:wght@300;400;500&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Noto Sans TC',sans-serif;background:#f7f2ec;min-height:100vh;padding:1.5rem 1rem 4rem;}
+.wrap{max-width:580px;margin:0 auto;}
+.brand{font-size:10px;letter-spacing:3px;color:#c4724a;font-weight:500;text-transform:uppercase;margin-bottom:6px;}
+.page-title{font-family:'Noto Serif TC',serif;font-size:22px;font-weight:300;color:#3a3028;letter-spacing:2px;margin-bottom:10px;}
+.header-meta{background:#f5ede6;border-radius:10px;padding:12px 16px;margin-bottom:1.5rem;display:flex;flex-direction:column;gap:5px;}
+.header-badge{display:inline-block;font-size:11px;font-weight:500;color:#c4724a;background:#fdf7f4;border:0.5px solid #dfc2ae;border-radius:4px;padding:2px 10px;letter-spacing:1px;align-self:flex-start;margin-bottom:2px;}
+.header-info-row{display:flex;align-items:flex-start;gap:6px;font-size:11.5px;color:#6b5e52;font-weight:300;line-height:1.6;}
+.step-bar{display:flex;margin-bottom:2rem;}
+.step{flex:1;padding:8px 4px;text-align:center;font-size:11px;font-weight:400;border-bottom:2px solid #ddd;color:#999;transition:all .2s;}
+.step.active{border-bottom:2px solid #c4724a;color:#c4724a;font-weight:500;}
+.step.done{border-bottom:2px solid #c4724a;color:#999;}
+.card{background:#fff;border:0.5px solid #e8e0d6;border-radius:12px;padding:1.5rem;margin-bottom:1rem;}
+.sec{font-size:10px;letter-spacing:2.5px;color:#c4724a;font-weight:500;text-transform:uppercase;margin-bottom:12px;padding-bottom:8px;border-bottom:0.5px solid #ede5dc;}
+.field{margin-bottom:1rem;}
+.field label{display:block;font-size:12px;color:#8a7a6e;margin-bottom:5px;}
+.field input,.field select,.field textarea{width:100%;padding:9px 12px;border:0.5px solid #d0c4b8;border-radius:8px;font-size:13px;font-family:'Noto Sans TC',sans-serif;background:#fff;color:#3a3028;outline:none;transition:border .15s;}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:#c4724a;box-shadow:0 0 0 2px rgba(196,114,74,0.12);}
+.field textarea{resize:vertical;min-height:68px;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.next-btn{width:100%;margin-top:1.25rem;padding:13px;background:#c4724a;border:none;border-radius:8px;color:#fff;font-size:14px;font-family:'Noto Sans TC',sans-serif;cursor:pointer;letter-spacing:1px;font-weight:500;}
+.next-btn:hover{background:#a85c38;}
+.back-btn{width:100%;margin-top:8px;padding:10px;background:transparent;border:0.5px solid #d0c4b8;border-radius:8px;color:#8a7a6e;font-size:13px;font-family:'Noto Sans TC',sans-serif;cursor:pointer;}
+.back-btn:hover{background:#f5ede6;}
+.irow{display:flex;justify-content:space-between;align-items:flex-start;padding:6px 0;font-size:12px;border-bottom:0.5px solid #ede5dc;}
+.irow:last-child{border-bottom:none;}
+.ilabel{color:#8a7a6e;font-weight:300;flex-shrink:0;margin-right:12px;}
+.ival{color:#3a3028;font-weight:500;text-align:right;}
+.ival-accent{font-size:10.5px;color:#c4724a;margin-top:2px;}
+.hidden{display:none!important;}
+.teacher-card{display:flex;gap:20px;align-items:center;padding:1.25rem;background:#f5ede6;border-radius:10px;}
+.teacher-photo{width:90px;height:90px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;border:2px solid #e0cfc3;}
+.teacher-name{font-size:16px;font-weight:500;color:#3a3028;margin-bottom:2px;}
+.teacher-title{font-size:11px;color:#c4724a;font-weight:400;letter-spacing:1px;margin-bottom:8px;}
+.teacher-cert{font-size:11px;color:#6b5e52;font-weight:300;line-height:1.7;}
+.session-list{display:flex;flex-direction:column;}
+.session{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:0.5px solid #ede5dc;}
+.session:last-child{border-bottom:none;}
+.sess-num{width:26px;height:26px;border-radius:50%;background:#f5e6de;border:0.5px solid #dfc2ae;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:500;color:#c4724a;flex-shrink:0;margin-top:1px;}
+.sess-meta{display:flex;align-items:center;gap:6px;margin-bottom:2px;}
+.sess-date{font-size:10px;color:#c4724a;}
+.sess-time{font-size:10px;color:#8a7a6e;font-weight:300;}
+.sess-title{font-size:12.5px;font-weight:500;color:#3a3028;margin-bottom:2px;}
+.sess-desc{font-size:10.5px;color:#8a7a6e;font-weight:300;line-height:1.5;}
+.fit-list{display:flex;flex-direction:column;gap:7px;margin-top:4px;}
+.fit-item{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:#3a3028;line-height:1.5;}
+.fit-dot{width:5px;height:5px;border-radius:50%;background:#c4724a;margin-top:5px;flex-shrink:0;}
+.feat-list{display:flex;flex-direction:column;gap:8px;margin-top:4px;}
+.feat-item{display:flex;align-items:flex-start;gap:10px;font-size:12px;color:#3a3028;line-height:1.6;}
+.feat-num{font-size:10px;font-weight:500;color:#c4724a;background:#f5e6de;border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
+.pay-choice{display:flex;flex-direction:column;gap:10px;margin-top:4px;}
+.pay-card{border:1.5px solid #e0d0c4;border-radius:10px;padding:16px 18px;cursor:pointer;transition:border .15s,background .15s;background:#fff;}
+.pay-card:hover{border-color:#c4724a;}
+.pay-card.selected{border-color:#c4724a;background:#fdf7f4;}
+.pay-card-top{display:flex;align-items:center;gap:12px;}
+.pay-card input[type=radio]{accent-color:#c4724a;width:16px;height:16px;flex-shrink:0;cursor:pointer;}
+.pay-card-icon{font-size:22px;}
+.pay-card-label{font-size:14px;font-weight:500;color:#3a3028;}
+.pay-card-price{margin-left:auto;font-size:15px;font-weight:600;color:#c4724a;}
+.pay-card-note{font-size:11px;color:#8a7a6e;font-weight:300;margin-top:6px;padding-left:28px;line-height:1.6;}
+.pay-card-badge{display:inline-block;font-size:10px;background:#f5e6de;color:#c4724a;border-radius:4px;padding:1px 7px;margin-left:6px;font-weight:500;vertical-align:middle;}
+.disc-wrap{margin-top:1rem;padding-top:1rem;border-top:0.5px solid #ede5dc;}
+.disc-row-input{display:flex;gap:8px;align-items:flex-end;}
+.disc-row-input input{flex:1;padding:9px 12px;border:0.5px solid #d0c4b8;border-radius:8px;font-size:13px;font-family:'Noto Sans TC',sans-serif;background:#fff;color:#3a3028;outline:none;transition:border .15s;}
+.disc-row-input input:focus{border-color:#c4724a;}
+.apply-btn{padding:9px 16px;background:#f5e6de;border:0.5px solid #dfc2ae;border-radius:8px;color:#c4724a;font-size:12px;font-family:'Noto Sans TC',sans-serif;cursor:pointer;white-space:nowrap;font-weight:500;}
+.apply-btn:hover{background:#ead5c8;}
+.disc-msg{font-size:11px;margin-top:5px;}
+.ok{color:#4a7a4a;}.err{color:#a84a2a;}
+.disc-success-banner{background:#f0f7f0;border:0.5px solid #a8c8a8;border-radius:8px;padding:10px 14px;margin-top:10px;font-size:11.5px;color:#3a6a3a;line-height:1.7;}
+.sumbox{background:#f5ede6;border-radius:8px;padding:1rem 1.25rem;margin-top:1rem;}
+.sumrow{display:flex;justify-content:space-between;padding:5px 0;font-size:12.5px;border-bottom:0.5px solid #e0cfc3;}
+.sumrow:last-child{border-bottom:none;padding-top:8px;margin-top:2px;}
+.sumlabel{color:#8a7a6e;font-weight:300;}
+.sumval{color:#3a3028;font-weight:500;}
+.sumtotal{font-size:15px;font-weight:600;color:#c4724a;}
+.bank-box{background:#f5ede6;border-radius:8px;padding:1rem 1.25rem;margin-top:8px;}
+.brow{display:flex;justify-content:space-between;align-items:center;padding:5px 0;font-size:12px;border-bottom:0.5px solid #e0cfc3;}
+.brow:last-child{border-bottom:none;}
+.bkey{color:#8a7a6e;font-weight:300;}
+.bval{font-weight:500;color:#3a3028;}
+.bval-wrap{display:flex;align-items:center;gap:8px;}
+.copy-btn{padding:3px 10px;background:#f5e6de;border:0.5px solid #dfc2ae;border-radius:5px;color:#c4724a;font-size:10.5px;font-family:'Noto Sans TC',sans-serif;cursor:pointer;white-space:nowrap;}
+.copy-btn:hover{background:#ead5c8;}
+.copy-btn.copied{background:#e6f0e6;border-color:#a8c8a8;color:#4a7a4a;}
+.bank-note{font-size:10.5px;color:#c4724a;margin-top:8px;line-height:1.7;}
+.checkout-btn{width:100%;margin-top:1.25rem;padding:13px;background:#3a3028;border:none;border-radius:8px;color:#fdfaf6;font-size:14px;font-family:'Noto Sans TC',sans-serif;cursor:pointer;letter-spacing:1px;font-weight:500;}
+.checkout-btn:hover{background:#2a2018;}
+.cc-btn{display:block;width:100%;margin-top:1rem;padding:13px;background:#3a3028;border:none;border-radius:8px;color:#fdfaf6;font-size:14px;font-family:'Noto Sans TC',sans-serif;cursor:pointer;letter-spacing:1px;font-weight:500;text-align:center;text-decoration:none;}
+.cc-btn:hover{background:#2a2018;}
+.success-wrap{text-align:center;padding:2rem 1rem;}
+.success-icon{font-size:44px;margin-bottom:1rem;}
+.success-title{font-family:'Noto Serif TC',serif;font-size:20px;font-weight:300;color:#3a3028;margin-bottom:10px;}
+.success-msg{font-size:13px;color:#6b5e52;line-height:1.9;font-weight:300;}
+.tagnote{font-size:10.5px;color:#8a7a6e;margin-top:8px;font-weight:300;}
+.req-note{font-size:10px;color:#8a7a6e;margin-bottom:1rem;}
+.transfer-fields{background:#f5ede6;border-radius:8px;padding:1rem 1.25rem;margin-top:1rem;}
+.transfer-fields-title{font-size:11px;color:#c4724a;font-weight:500;letter-spacing:1.5px;margin-bottom:10px;}
+.tf-field{margin-bottom:10px;}
+.tf-field:last-child{margin-bottom:0;}
+.tf-field label{display:block;font-size:11.5px;color:#8a7a6e;margin-bottom:5px;}
+.tf-field input{width:100%;padding:8px 11px;border:0.5px solid #d0c4b8;border-radius:7px;font-size:13px;font-family:'Noto Sans TC',sans-serif;background:#fff;color:#3a3028;outline:none;transition:border .15s;}
+.tf-field input:focus{border-color:#c4724a;box-shadow:0 0 0 2px rgba(196,114,74,0.12);}
+.submitting{opacity:.6;pointer-events:none;}
+.error-banner{background:#fff0ee;border:0.5px solid #e0a898;border-radius:8px;padding:10px 14px;margin-top:10px;font-size:11.5px;color:#a84a2a;line-height:1.7;display:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">質穎形象顏究室®</div>
+  <div class="page-title">個人穿搭風格養成班</div>
+  <div class="header-meta">
+    <span class="header-badge">2026 年・第一期</span>
+    <div class="header-info-row"><span>🗓</span><span>全實體小班課・共 6 堂・每堂 2 小時</span></div>
+    <div class="header-info-row"><span>📍</span><span>台中 WensCo 文心館（近台中捷運－四維國小站）</span></div>
+  </div>
+
+  <div class="step-bar">
+    <div class="step active" id="s1">01 課程說明</div>
+    <div class="step" id="s2">02 填寫資料</div>
+    <div class="step" id="s3">03 付款方式</div>
+    <div class="step" id="s4">04 確認送出</div>
+  </div>
+
+  <!-- STEP 1 -->
+  <div id="step1">
+    <div class="card">
+      <div class="sec">師資介紹</div>
+      <div class="teacher-card">
+        <img class="teacher-photo" id="teacher-img" alt="蕭加穎老師">
+        <div>
+          <div class="teacher-name">蕭加穎</div>
+          <div class="teacher-title">質穎形象顏究室® 創辦人</div>
+          <div class="teacher-cert">日本 JPCA 個人色彩高階分析顧問<br>日本 KPFA 12 型骨骼診斷 PLUS 技能士<br>日本 KPFA 顏診斷・體型平衡技能士<br>品牌獨創：個人風格限度定位®</div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="sec">課程大綱・每堂 2 小時・下午 1:00 — 3:00</div>
+      <div class="session-list">
+        <div class="session"><div class="sess-num">01</div><div><div class="sess-meta"><span class="sess-date">06/27（六）</span><span class="sess-time">13:00 — 15:00</span></div><div class="sess-title">自我風格覺察 × 生命階段重新定位</div><div class="sess-desc">想要學會穿搭，最重要就是要先釐清以及覺察自己</div></div></div>
+        <div class="session"><div class="sess-num">02</div><div><div class="sess-meta"><span class="sess-date">07/04（六）</span><span class="sess-time">13:00 — 15:00</span></div><div class="sess-title">色彩示範 × 現場測色</div><div class="sess-desc">簡易的色彩檢測，讓你親眼見到顏色對自己的影響</div></div></div>
+        <div class="session"><div class="sess-num">03</div><div><div class="sess-meta"><span class="sess-date">07/11（六）</span><span class="sess-time">13:00 — 15:00</span></div><div class="sess-title">骨骼 × 材質 × 視覺份量感</div><div class="sess-desc">骨骼到底有多影響材質的挑選，直接讓你親眼看看</div></div></div>
+        <div class="session"><div class="sess-num">04</div><div><div class="sess-meta"><span class="sess-date">07/18（六）</span><span class="sess-time">13:00 — 15:00</span></div><div class="sess-title">比例 × 落點 × 完成度技巧</div><div class="sess-desc">讓你了解為什麼你穿不出像其他人一樣的樣貌</div></div></div>
+        <div class="session"><div class="sess-num">05</div><div><div class="sess-meta"><span class="sess-date">07/25（六）</span><span class="sess-time">13:00 — 15:00</span></div><div class="sess-title">風格限度 × 三種穩定風格方向</div><div class="sess-desc">改變風格不一定要重新買，只要調整一些細節就可以</div></div></div>
+        <div class="session"><div class="sess-num">06</div><div><div class="sess-meta"><span class="sess-date">08/02（六）</span><span class="sess-time">13:00 — 15:00</span></div><div class="sess-title">單品診斷 × 衣櫃斷捨離實作</div><div class="sess-desc">微型衣櫃整理，幫你找出舊衣的 bug 以及新生</div></div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="sec">適合對象</div>
+      <div class="fit-list">
+        <div class="fit-item"><div class="fit-dot"></div><span>想簡單了解自己的色彩與骨骼</span></div>
+        <div class="fit-item"><div class="fit-dot"></div><span>無任何穿搭基礎者</span></div>
+        <div class="fit-item"><div class="fit-dot"></div><span>想要幫助自己精確選品的服飾賣家</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="sec">課程特色</div>
+      <div class="feat-list">
+        <div class="feat-item"><div class="feat-num">1</div><span>小班制不求多、只求可以照顧到每個人</span></div>
+        <div class="feat-item"><div class="feat-num">2</div><span>簡單快速了解到底什麼是個人色彩、骨骼分析</span></div>
+        <div class="feat-item"><div class="feat-num">3</div><span>第六堂實戰帶衣診斷，幫你解決最苦惱的幾件服裝</span></div>
+        <div class="feat-item"><div class="feat-num">4</div><span>觀念、理論、實戰全部都給你，給你最落地的學習</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="sec">課程費用</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border:1.5px solid #dfc2ae;border-radius:10px;background:#fdf7f4;">
+          <div><div style="font-size:13px;font-weight:500;color:#3a3028;">🏦 現金（轉帳）優惠價</div><div style="font-size:10.5px;color:#8a7a6e;margin-top:3px;">持折扣碼可再享優惠</div></div>
+          <div style="font-size:18px;font-weight:600;color:#c4724a;">NTD 10,000</div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border:0.5px solid #e0d0c4;border-radius:10px;background:#f5ede6;">
+          <div><div style="font-size:13px;font-weight:500;color:#3a3028;">💳 信用卡</div><div style="font-size:10.5px;color:#8a7a6e;margin-top:3px;">可單筆 / 分期付款</div></div>
+          <div style="font-size:18px;font-weight:600;color:#3a3028;">NTD 11,000</div>
+        </div>
+      </div>
+    </div>
+    <button class="next-btn" onclick="goStep2()">我要報名 →</button>
+  </div>
+
+  <!-- STEP 2 -->
+  <div id="step2" class="hidden">
+    <div class="card">
+      <div class="sec">基本資料</div>
+      <div class="req-note">標示 <span style="color:#c4724a">＊</span> 為必填項目</div>
+      <div class="two-col">
+        <div class="field"><label>姓名 <span style="color:#c4724a">＊</span></label><input type="text" id="f-name" placeholder="你的名字"></div>
+        <div class="field"><label>性別</label>
+          <select id="f-gender">
+            <option value="">不填</option>
+            <option>男</option><option>女</option>
+            <option>無性別</option><option>中性</option><option>跨性別</option>
+          </select>
+        </div>
+      </div>
+      <div class="field"><label>手機號碼 <span style="color:#c4724a">＊</span></label><input type="tel" id="f-phone" placeholder="09xxxxxxxx"></div>
+      <div class="field"><label>Email <span style="color:#c4724a">＊</span></label><input type="email" id="f-email" placeholder="your@email.com"></div>
+      <div class="field"><label>如何知道這個課程？</label>
+        <select id="f-source">
+          <option value="">請選擇</option>
+          <option>Instagram @go_floralway</option>
+          <option>Threads @go_floralway</option>
+          <option>Liora4u</option>
+          <option>LINE 官方帳號</option>
+          <option>朋友介紹</option>
+          <option>舊學員 / 老客戶</option>
+          <option>其他</option>
+        </select>
+      </div>
+      <div class="field"><label>目前最困擾你的穿搭問題是？</label><textarea id="f-issue" placeholder="不限字數，讓老師提前了解你的狀況～"></textarea></div>
+      <button class="next-btn" onclick="goStep3()">下一步：選擇付款方式 →</button>
+      <button class="back-btn" onclick="goStep1Back()">← 返回課程說明</button>
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div id="step3" class="hidden">
+    <div class="card">
+      <div class="sec">選擇付款方式</div>
+      <div class="pay-choice">
+        <div class="pay-card selected" id="card-transfer" onclick="selectPay('transfer')">
+          <div class="pay-card-top"><input type="radio" name="paymethod" id="r-transfer" checked><div class="pay-card-icon">🏦</div><div class="pay-card-label">現金（轉帳）<span class="pay-card-badge">優惠價</span></div><div class="pay-card-price">NTD 10,000</div></div>
+          <div class="pay-card-note">銀行轉帳・完成後截圖回傳老師確認</div>
+        </div>
+        <div class="pay-card" id="card-cc" onclick="selectPay('cc')">
+          <div class="pay-card-top"><input type="radio" name="paymethod" id="r-cc"><div class="pay-card-icon">💳</div><div class="pay-card-label">信用卡</div><div class="pay-card-price">NTD 11,000</div></div>
+          <div class="pay-card-note">可單筆 / 分期付款・點擊確認後將導向刷卡連結</div>
+        </div>
+      </div>
+      <div class="disc-wrap" id="disc-section">
+        <div style="font-size:11px;letter-spacing:1.5px;color:#c4724a;font-weight:500;margin-bottom:8px;">折扣碼（選填）</div>
+        <div class="disc-row-input"><input type="text" id="f-code" placeholder="輸入專屬折扣碼"><button class="apply-btn" onclick="applyCode()">套用</button></div>
+        <div class="disc-msg" id="code-msg"></div>
+        <div class="disc-success-banner hidden" id="disc-banner">✓ 折扣碼套用成功<br><strong>優惠價僅能以現金轉帳支付</strong>，請確認付款方式為「現金（轉帳）」後繼續報名。</div>
+        <div class="sumbox">
+          <div class="sumrow"><span class="sumlabel">現金優惠價</span><span class="sumval">NTD 10,000</span></div>
+          <div class="sumrow hidden" id="disc-row"><span class="sumlabel">折扣碼優惠</span><span class="sumval" style="color:#4a7a4a;">－ NTD 320</span></div>
+          <div class="sumrow"><span class="sumlabel">應付金額</span><span class="sumval sumtotal" id="total-display">NTD 10,000</span></div>
+        </div>
+      </div>
+      <div id="transfer-info-fields">
+        <!-- 匯款帳號資訊 -->
+        <div style="background:#f5ede6;border:1px solid #dfc2ae;border-radius:10px;padding:1rem 1.25rem;margin-top:1rem;">
+          <div style="font-size:10px;letter-spacing:2px;color:#c4724a;font-weight:500;text-transform:uppercase;margin-bottom:10px;">匯款帳號資訊</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:5px 0;font-size:12px;border-bottom:0.5px solid #e0cfc3;"><span style="color:#8a7a6e;font-weight:300;">銀行</span><span style="font-weight:500;color:#3a3028;">玉山銀行（代碼：808）</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:5px 0;font-size:12px;border-bottom:0.5px solid #e0cfc3;"><span style="color:#8a7a6e;font-weight:300;">戶名</span><span style="font-weight:500;color:#3a3028;">喆媄商行 蕭加穎</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:5px 0;font-size:12px;">
+            <span style="color:#8a7a6e;font-weight:300;">帳號</span>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="font-weight:500;color:#3a3028;">1388-940-031137</span>
+              <button id="copy-bank" onclick="copyBank()" style="padding:3px 10px;background:#f5e6de;border:0.5px solid #dfc2ae;border-radius:5px;color:#c4724a;font-size:10.5px;font-family:'Noto Sans TC',sans-serif;cursor:pointer;">複製</button>
+            </div>
+          </div>
+          <div style="font-size:10.5px;color:#c4724a;margin-top:8px;line-height:1.7;">請先完成匯款，再填寫下方匯款資訊 ↓</div>
+        </div>
+        <div class="transfer-fields">
+          <div class="transfer-fields-title">匯款完成後請填寫</div>
+          <div class="tf-field"><label>匯款帳戶末五碼 <span style="color:#c4724a">＊</span></label><input type="text" id="f-acct5" placeholder="例：31137" maxlength="5" inputmode="numeric"></div>
+          <div class="tf-field"><label>匯款人姓名 <span style="color:#c4724a">＊</span></label><input type="text" id="f-remitter" placeholder="與轉帳帳戶相符的姓名"></div>
+        </div>
+      </div>
+      <button class="next-btn" onclick="goStep4()">下一步：確認送出 →</button>
+      <button class="back-btn" onclick="goStep2Back()">← 返回填寫資料</button>
+    </div>
+  </div>
+
+  <!-- STEP 4 -->
+  <div id="step4" class="hidden">
+    <div class="card">
+      <div class="sec">確認報名內容</div>
+      <div style="background:#f5ede6;border-radius:8px;padding:1rem 1.25rem;margin-bottom:1rem;">
+        <div class="irow"><span class="ilabel">課程</span><span class="ival">個人穿搭風格養成班</span></div>
+        <div class="irow"><span class="ilabel">日期 / 時間</span><span class="ival">06/27 — 08/02 每週六<br>下午 1:00 — 3:00</span></div>
+        <div class="irow"><span class="ilabel">地點</span><div style="text-align:right;"><div class="ival">WensCo 文心館</div><div class="ival-accent">詳細教室開課前一週 email 通知</div></div></div>
+        <div class="irow"><span class="ilabel">姓名</span><span class="ival" id="c-name">—</span></div>
+        <div class="irow"><span class="ilabel">性別</span><span class="ival" id="c-gender">—</span></div>
+        <div class="irow"><span class="ilabel">手機</span><span class="ival" id="c-phone">—</span></div>
+        <div class="irow"><span class="ilabel">Email</span><span class="ival" id="c-email" style="font-size:11px;">—</span></div>
+        <div class="irow"><span class="ilabel">付款方式</span><span class="ival" id="c-pay">—</span></div>
+        <div class="irow hidden" id="c-disc-row"><span class="ilabel">折扣碼</span><span class="ival" id="c-code" style="color:#c4724a;">—</span></div>
+        <div class="irow hidden" id="c-acct-row"><span class="ilabel">匯款末五碼</span><span class="ival" id="c-acct5">—</span></div>
+        <div class="irow hidden" id="c-remitter-row"><span class="ilabel">匯款人</span><span class="ival" id="c-remitter">—</span></div>
+        <div class="irow" style="border-bottom:none;padding-top:8px;margin-top:2px;"><span style="font-size:12px;font-weight:500;color:#3a3028;">應付金額</span><span class="sumtotal" id="c-total">—</span></div>
+      </div>
+      <div id="confirm-transfer">
+        <div class="sec">匯款資訊</div>
+        <div class="bank-box">
+          <div class="brow"><span class="bkey">銀行</span><span class="bval">玉山銀行</span></div>
+          <div class="brow"><span class="bkey">銀行代碼</span><span class="bval">808</span></div>
+          <div class="brow"><span class="bkey">戶名</span><span class="bval">喆媄商行 蕭加穎</span></div>
+          <div class="brow"><span class="bkey">帳號</span><div class="bval-wrap"><span class="bval">1388-940-031137</span><button class="copy-btn" id="copy-acc" onclick="copyAcc()">複製</button></div></div>
+          <div class="bank-note">匯款完成後，請截圖私訊 Instagram <strong>@go_floralway</strong><br>老師確認後會回覆報名成功通知</div>
+        </div>
+        <div class="error-banner" id="err-banner">送出失敗，請稍後再試，或直接私訊 @go_floralway 報名。</div>
+        <button class="checkout-btn" id="submit-btn" onclick="submitOrder()">確認送出報名 ✓</button>
+      </div>
+      <div id="confirm-cc" class="hidden">
+        <div style="background:#f5ede6;border-radius:8px;padding:12px 14px;font-size:11px;color:#6b5e52;line-height:1.7;margin-bottom:4px;">💳 點擊下方按鈕後，將導向藍新金流刷卡付款頁面完成繳費。<br>付款完成後請私訊 @go_floralway 告知，老師會回覆確認。</div>
+        <a class="cc-btn" href="https://core.newebpay.com/EPG/floralway/hCotoY" target="_blank" onclick="submitCCData()">前往刷卡付款頁面 →</a>
+      </div>
+      <button class="back-btn" onclick="goStep3Back()">← 修改付款方式</button>
+    </div>
+  </div>
+
+  <!-- SUCCESS -->
+  <div id="step-ok" class="hidden">
+    <div class="card">
+      <div class="success-wrap">
+        <div class="success-icon">🌸</div>
+        <div class="success-title">報名成功，謝謝你</div>
+        <div class="success-msg" id="success-body">老師已收到你的報名資訊<br>會在 2 個工作天內透過私訊或 Email 與你確認</div>
+        <div class="tagnote" style="margin-top:1.5rem;">有任何問題歡迎私訊 Instagram @go_floralway</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzcuxnYTg49m55qA-iiKMwptj3AQww2dAf7RfkcSPcnQDhvMd5qYODemgz3eeIOmPPv/exec';
+const PHOTO_B64 = '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';
+
+document.getElementById('teacher-img').src = 'data:image/jpeg;base64,' + PHOTO_B64;
+
+let discApplied=false, payMethod='transfer';
+const VALID='liora4u';
+
+function show(id){['step1','step2','step3','step4','step-ok'].forEach(i=>document.getElementById(i).classList.add('hidden'));document.getElementById(id).classList.remove('hidden');window.scrollTo(0,0);}
+function setBar(a){['s1','s2','s3','s4'].forEach((id,i)=>{document.getElementById(id).className='step'+(i+1<a?' done':i+1===a?' active':'');});}
+
+function selectPay(t){
+  payMethod=t;
+  document.getElementById('card-transfer').classList.toggle('selected',t==='transfer');
+  document.getElementById('card-cc').classList.toggle('selected',t==='cc');
+  document.getElementById('r-transfer').checked=t==='transfer';
+  document.getElementById('r-cc').checked=t==='cc';
+  document.getElementById('disc-section').style.display=t==='transfer'?'block':'none';
+  document.getElementById('transfer-info-fields').style.display=t==='transfer'?'block':'none';
+  if(t==='cc'){discApplied=false;}
+}
+
+function applyCode(){
+  const raw=document.getElementById('f-code').value.trim();
+  const code=raw.toLowerCase();
+  const msg=document.getElementById('code-msg');
+  const banner=document.getElementById('disc-banner');
+  const dr=document.getElementById('disc-row');
+  const tot=document.getElementById('total-display');
+  if(!raw){msg.textContent='請輸入折扣碼';msg.className='disc-msg err';return;}
+  if(code===VALID){discApplied=true;msg.textContent='';banner.classList.remove('hidden');dr.classList.remove('hidden');tot.textContent='NTD 9,680';}
+  else{discApplied=false;msg.textContent='此折扣碼無效，請確認後重試';msg.className='disc-msg err';banner.classList.add('hidden');dr.classList.add('hidden');tot.textContent='NTD 10,000';}
+}
+
+function copyAcc(){
+  navigator.clipboard.writeText('1388940031137').then(()=>{
+    const btn=document.getElementById('copy-acc');btn.textContent='已複製 ✓';btn.classList.add('copied');
+    setTimeout(()=>{btn.textContent='複製';btn.classList.remove('copied');},2000);
+  }).catch(()=>{document.getElementById('copy-acc').textContent='請手動複製';});
+}
+
+function goStep1Back(){show('step1');setBar(1);}
+function goStep2(){show('step2');setBar(2);}
+function goStep2Back(){show('step2');setBar(2);}
+
+function goStep3(){
+  const name=document.getElementById('f-name').value.trim();
+  const phone=document.getElementById('f-phone').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  if(!name||!phone||!email){alert('請填寫姓名、手機和 Email 後繼續');return;}
+  document.getElementById('transfer-info-fields').style.display=payMethod==='transfer'?'block':'none';
+  show('step3');setBar(3);
+}
+
+function goStep3Back(){show('step3');setBar(3);}
+
+function goStep4(){
+  if(payMethod==='transfer'){
+    const acct5=document.getElementById('f-acct5').value.trim();
+    const remitter=document.getElementById('f-remitter').value.trim();
+    if(!acct5||acct5.length!==5){alert('請填寫匯款帳戶末五碼（5位數字）');return;}
+    if(!remitter){alert('請填寫匯款人姓名');return;}
+  }
+  const name=document.getElementById('f-name').value.trim();
+  const gender=document.getElementById('f-gender').value;
+  const phone=document.getElementById('f-phone').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  const total=payMethod==='cc'?'NTD 11,000':(discApplied?'NTD 9,680':'NTD 10,000');
+  const payLabel=payMethod==='cc'?'信用卡':'現金轉帳';
+  const code=document.getElementById('f-code').value.trim();
+  document.getElementById('c-name').textContent=name;
+  document.getElementById('c-gender').textContent=gender||'—';
+  document.getElementById('c-phone').textContent=phone;
+  document.getElementById('c-email').textContent=email;
+  document.getElementById('c-pay').textContent=payLabel;
+  document.getElementById('c-total').textContent=total;
+  const cdr=document.getElementById('c-disc-row');
+  if(discApplied&&code&&payMethod==='transfer'){cdr.classList.remove('hidden');document.getElementById('c-code').textContent=code.toUpperCase();}
+  else{cdr.classList.add('hidden');}
+  const acctRow=document.getElementById('c-acct-row');
+  const remRow=document.getElementById('c-remitter-row');
+  if(payMethod==='transfer'){
+    acctRow.classList.remove('hidden');remRow.classList.remove('hidden');
+    document.getElementById('c-acct5').textContent=document.getElementById('f-acct5').value.trim();
+    document.getElementById('c-remitter').textContent=document.getElementById('f-remitter').value.trim();
+  }else{acctRow.classList.add('hidden');remRow.classList.add('hidden');}
+  document.getElementById('confirm-transfer').classList.toggle('hidden',payMethod!=='transfer');
+  document.getElementById('confirm-cc').classList.toggle('hidden',payMethod!=='cc');
+  show('step4');setBar(4);
+}
+
+function collectData(){
+  return {
+    name: document.getElementById('f-name').value.trim(),
+    gender: document.getElementById('f-gender').value,
+    phone: document.getElementById('f-phone').value.trim(),
+    email: document.getElementById('f-email').value.trim(),
+    source: document.getElementById('f-source').value,
+    issue: document.getElementById('f-issue').value.trim(),
+    payMethod: payMethod==='cc'?'信用卡':'現金轉帳',
+    discCode: discApplied?document.getElementById('f-code').value.trim().toUpperCase():'',
+    total: payMethod==='cc'?'NTD 11,000':(discApplied?'NTD 9,680':'NTD 10,000'),
+    acct5: payMethod==='transfer'?document.getElementById('f-acct5').value.trim():'',
+    remitter: payMethod==='transfer'?document.getElementById('f-remitter').value.trim():''
+  };
+}
+
+async function submitOrder(){
+  const btn=document.getElementById('submit-btn');
+  const errBanner=document.getElementById('err-banner');
+  btn.textContent='送出中...';
+  btn.classList.add('submitting');
+  errBanner.style.display='none';
+  try{
+    await fetch(SCRIPT_URL,{method:'POST',body:JSON.stringify(collectData())});
+    document.getElementById('success-body').innerHTML=
+      '老師已收到你的報名資訊<br>請完成轉帳匯款 <strong>'+(discApplied?'NTD 9,680':'NTD 10,000')+'</strong><br>截圖後私訊 @go_floralway，老師確認後回覆';
+    show('step-ok');setBar(5);
+  }catch(e){
+    errBanner.style.display='block';
+    btn.textContent='確認送出報名 ✓';
+    btn.classList.remove('submitting');
+  }
+}
+
+function submitCCData(){
+  fetch(SCRIPT_URL,{method:'POST',body:JSON.stringify(collectData())}).catch(()=>{});
+}
+</script>
+</body>
+</html>
